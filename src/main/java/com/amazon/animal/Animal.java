@@ -1,4 +1,4 @@
-package com.amazon;
+package com.amazon.animal;
 
 public abstract class Animal {
     private String name;

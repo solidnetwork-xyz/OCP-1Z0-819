@@ -1,4 +1,4 @@
-package com.amazon;
+package com.amazon.animal;
 
 public class Dog extends Animal implements IAnimal{
     @Override

@@ -1,4 +1,4 @@
-package com.amazon.dto;
+package com.amazon.service;
 
 public class ResponseDto {
     private String code;

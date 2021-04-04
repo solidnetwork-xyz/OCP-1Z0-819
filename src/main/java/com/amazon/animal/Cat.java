@@ -1,4 +1,4 @@
-package com.amazon;
+package com.amazon.animal;
 
 public class Cat extends Animal implements IAnimal{
 
