@@ -3,10 +3,10 @@ package com.amazon;
 import com.amazon.animal.Cat;
 import com.amazon.animal.Dog;
 import com.amazon.animal.IAnimal;
-import com.amazon.service.IDogService;
-import com.amazon.service.ResponseDto;
-import com.amazon.service.DogServiceServiceManager;
-import com.amazon.service.DogServiceServiceProcessor;
+import com.amazon.interfaces.IDogService;
+import com.amazon.interfaces.ResponseDto;
+import com.amazon.interfaces.DogServiceServiceManager;
+import com.amazon.interfaces.DogServiceServiceProcessor;
 import java.util.Scanner;
 
 //TODO: SpringBootApplication annotation

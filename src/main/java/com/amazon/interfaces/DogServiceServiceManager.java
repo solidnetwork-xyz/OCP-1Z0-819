@@ -1,7 +1,4 @@
-package com.amazon.service;
-
-import com.amazon.service.IDogService;
-import com.amazon.service.ResponseDto;
+package com.amazon.interfaces;
 
 // TODO: Service annotation
 public class DogServiceServiceManager implements IDogService {

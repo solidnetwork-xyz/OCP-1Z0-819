@@ -1,4 +1,4 @@
-package com.amazon.service;
+package com.amazon.interfaces;
 
 public interface IDogService {
     ResponseDto play();
