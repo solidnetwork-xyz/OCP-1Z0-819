@@ -26,6 +26,8 @@ public class MainApplication {
             break;
             case 2: dogFetch();
             break;
+            case 3: catFetch();
+            break;
             default:
                 //TODO: change println to slf4j
                 System.out.println("out of options");
@@ -51,5 +53,10 @@ public class MainApplication {
     private static void dogFetch(){
         IAnimal dog = new Dog();
         dog.fetch();
+    }
+
+    private static void catFetch(){
+        IAnimal cat = new Cat();
+        cat.fetch();
     }
 }
