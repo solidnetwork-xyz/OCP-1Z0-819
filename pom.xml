@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.prottonne</groupId>
+    <groupId>com.amazon</groupId>
     <artifactId>OCP-1Z0-819</artifactId>
     <version>1.0-SNAPSHOT</version>
 
