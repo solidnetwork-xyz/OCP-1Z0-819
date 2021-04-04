@@ -1,10 +1,10 @@
 package com.amazon.service.impl;
 
-import com.amazon.service.IDog;
+import com.amazon.service.IDogService;
 import com.amazon.dto.ResponseDto;
 
 // TODO: Service annotation
-public class DogServiceProcessor implements IDog{
+public class DogServiceServiceProcessor implements IDogService {
 
     @Override
     public ResponseDto play(){

@@ -1,9 +1,9 @@
 package com.amazon;
 
-import com.amazon.service.IDog;
+import com.amazon.service.IDogService;
 import com.amazon.dto.ResponseDto;
-import com.amazon.service.impl.DogServiceManager;
-import com.amazon.service.impl.DogServiceProcessor;
+import com.amazon.service.impl.DogServiceServiceManager;
+import com.amazon.service.impl.DogServiceServiceProcessor;
 import java.util.Scanner;
 
 //TODO: SpringBootApplication annotation
@@ -24,6 +24,8 @@ public class MainApplication {
         switch(optionSelected){
             case 1: multipleImplementationExample();
             break;
+            case 2: dogFetch();
+            break;
             default:
                 //TODO: change println to slf4j
                 System.out.println("out of options");
@@ -35,14 +37,19 @@ public class MainApplication {
         //TODO: change println to slf4j
         System.out.println("before calling dogService");
         //TODO: change new to @Autowired
-        IDog dogServiceManager = new DogServiceManager();
+        IDogService dogServiceManager = new DogServiceServiceManager();
         ResponseDto dogServiceManagerResponse = dogServiceManager.play();
         //TODO: change println to slf4j
         System.out.println("after calling dogServiceManager " + dogServiceManagerResponse);
         //TODO: change new to @Autowired
-        IDog dogServiceProcessor = new DogServiceProcessor();
+        IDogService dogServiceProcessor = new DogServiceServiceProcessor();
         ResponseDto dogServiceProcessorResponse = dogServiceProcessor.play();
         //TODO: change println to slf4j
         System.out.println("after calling dogServiceProcessor " + dogServiceProcessorResponse);
+    }
+
+    private static void dogFetch(){
+        IAnimal dog = new Dog();
+        dog.fetch();
     }
 }
