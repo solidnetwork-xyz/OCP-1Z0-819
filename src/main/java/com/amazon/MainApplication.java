@@ -2,35 +2,45 @@ package com.amazon;
 
 import com.amazon.animal.*;
 import com.amazon.interfaces.*;
+
 import java.util.Scanner;
+
 import com.amazon.toy.*;
 
 //TODO: SpringBootApplication annotation
 public class MainApplication {
 
-    public static int getOption(){
+    public static int getOption() {
         //TODO: change console input to REST controller
         System.out.print("Enter your option please: ");
-        Scanner consoleReader =  new Scanner(System.in);
+        Scanner consoleReader = new Scanner(System.in);
         return consoleReader.nextInt();
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         //TODO: SpringApplication initialization
 
         int optionSelected = getOption();
 
-        switch(optionSelected){
-            case 1: multipleImplementationExample();
-            break;
-            case 2: dogFetch();
-            break;
-            case 3: catFetch();
-            break;
-            case 4: playWithToys();
-            break;
-            case 5: arrays();
-            break;
+        switch (optionSelected) {
+            case 1:
+                multipleImplementationExample();
+                break;
+            case 2:
+                dogFetch();
+                break;
+            case 3:
+                catFetch();
+                break;
+            case 4:
+                playWithToys();
+                break;
+            case 5:
+                arrays();
+                break;
+            case 6:
+                doubleInitialization();
+                break;
             default:
                 //TODO: change println to slf4j
                 System.out.println("out of options");
@@ -38,7 +48,7 @@ public class MainApplication {
 
     }
 
-    private static void multipleImplementationExample(){
+    private static void multipleImplementationExample() {
         //TODO: change println to slf4j
         System.out.println("before calling dogService");
         //TODO: change new to @Autowired
@@ -53,17 +63,17 @@ public class MainApplication {
         System.out.println("after calling dogServiceProcessor " + dogServiceProcessorResponse);
     }
 
-    private static void dogFetch(){
+    private static void dogFetch() {
         IAnimal dog = new Dog();
         dog.fetch();
     }
 
-    private static void catFetch(){
+    private static void catFetch() {
         IAnimal cat = new Cat();
         cat.fetch();
     }
 
-    private static void playWithToys(){
+    private static void playWithToys() {
         Dog dog = new Dog();
         dog.setFavoriteToy(new Ball());
         dog.fetch();
@@ -73,9 +83,9 @@ public class MainApplication {
         dog.fetch();
     }
 
-    private static void arrays(){
-        String[] aString = {"St1","St2","St3"};
-        int[] aInt = {1,2,3};
+    private static void arrays() {
+        String[] aString = {"St1", "St2", "St3"};
+        int[] aInt = {1, 2, 3};
         System.out.println(aString);
         System.out.println(aInt);
 
@@ -83,5 +93,20 @@ public class MainApplication {
         int[] aInt2 = new int[16];
         System.out.println(aString2);
         System.out.println(aInt2);
+    }
+
+    private static void doubleInitialization() {
+        double someDouble = 32.16;
+        System.out.println(someDouble);
+        someDouble = 32.16d;
+        System.out.println(someDouble);
+        someDouble = 32.16D;
+        System.out.println(someDouble);
+        someDouble = 2.1E12;
+        System.out.println(someDouble);
+        someDouble = 75; //Becomes 75.0
+        System.out.println(someDouble);
+        someDouble = .3;
+        System.out.println(someDouble);
     }
 }
