@@ -1,13 +1,9 @@
 package com.amazon;
 
-import com.amazon.animal.Cat;
-import com.amazon.animal.Dog;
-import com.amazon.animal.IAnimal;
-import com.amazon.interfaces.IDogService;
-import com.amazon.interfaces.ResponseDto;
-import com.amazon.interfaces.DogServiceServiceManager;
-import com.amazon.interfaces.DogServiceServiceProcessor;
+import com.amazon.animal.*;
+import com.amazon.interfaces.*;
 import java.util.Scanner;
+import com.amazon.toy.*;
 
 //TODO: SpringBootApplication annotation
 public class MainApplication {
@@ -30,6 +26,8 @@ public class MainApplication {
             case 2: dogFetch();
             break;
             case 3: catFetch();
+            break;
+            case 4: playWithToys();
             break;
             default:
                 //TODO: change println to slf4j
@@ -61,5 +59,15 @@ public class MainApplication {
     private static void catFetch(){
         IAnimal cat = new Cat();
         cat.fetch();
+    }
+
+    private static void playWithToys(){
+        Dog dog = new Dog();
+        dog.setFavoriteToy(new Ball());
+        dog.fetch();
+        dog.setFavoriteToy(new Squeaky());
+        dog.fetch();
+        dog.setFavoriteToy(new Shoe());
+        dog.fetch();
     }
 }
