@@ -18,7 +18,7 @@ public class MainApplication {
     public static void main(String[] args){
         //TODO: SpringApplication initialization
 
-        final int optionSelected = getOption();
+        int optionSelected = getOption();
 
         switch(optionSelected){
             case 1: multipleImplementationExample();
@@ -28,6 +28,8 @@ public class MainApplication {
             case 3: catFetch();
             break;
             case 4: playWithToys();
+            break;
+            case 5: arrays();
             break;
             default:
                 //TODO: change println to slf4j
@@ -69,5 +71,17 @@ public class MainApplication {
         dog.fetch();
         dog.setFavoriteToy(new Shoe());
         dog.fetch();
+    }
+
+    private static void arrays(){
+        String[] aString = {"St1","St2","St3"};
+        int[] aInt = {1,2,3};
+        System.out.println(aString);
+        System.out.println(aInt);
+
+        String[] aString2 = new String[3];
+        int[] aInt2 = new int[16];
+        System.out.println(aString2);
+        System.out.println(aInt2);
     }
 }
