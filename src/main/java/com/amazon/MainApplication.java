@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 import com.amazon.toy.*;
 import com.amazon.statics.*;
+import com.amazon.polymorphism.*;
 
 //TODO: SpringBootApplication annotation
 public class MainApplication {
@@ -47,6 +48,9 @@ public class MainApplication {
                 break;
             case 8:
                 exceptionFlow(new RuntimeException("This is an unchecked exception"));
+                break;
+            case 9:
+                polymorphism();
                 break;
             default:
                 //TODO: change println to slf4j
@@ -130,5 +134,17 @@ public class MainApplication {
             System.out.println("Exception is handled here");
         }
         System.out.println("execution continues here");
+    }
+
+    private static void polymorphism() {
+        ClothingPoly[] items = new ClothingPoly[2];
+        items[0] = new Tailored(10, 1);
+        items[1] = new Standard(5);
+        for (ClothingPoly item : items) {
+            System.out.println(item.getPrice());
+        }
+
+        ClothingPoly item = new Standard(7);
+        System.out.println(item.getPrice());
     }
 }
