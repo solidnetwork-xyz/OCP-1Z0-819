@@ -3,10 +3,12 @@ package com.amazon;
 import com.amazon.animal.*;
 
 import java.util.Scanner;
+import java.util.Arrays;
 
 import com.amazon.toy.*;
 import com.amazon.statics.*;
 import com.amazon.polymorphism.*;
+import com.amazon.interfaces.*;
 
 //TODO: SpringBootApplication annotation
 public class MainApplication {
@@ -24,6 +26,9 @@ public class MainApplication {
         int optionSelected = getOption();
 
         switch (optionSelected) {
+            case 1:
+                interfaces();
+                break;
             case 2:
                 dogFetch();
                 break;
@@ -67,12 +72,18 @@ public class MainApplication {
     }
 
     private static void playWithToys() {
+
+        Toy[] myToys = new Toy[3];
+        myToys[0] = new Ball();
+        myToys[1] = new Squeaky();
+        myToys[2] = new Shoe();
+
         Dog dog = new Dog();
-        dog.setFavoriteToy(new Ball());
+        dog.setFavoriteToy(myToys[0]);
         dog.fetch();
-        dog.setFavoriteToy(new Squeaky());
+        dog.setFavoriteToy(myToys[1]);
         dog.fetch();
-        dog.setFavoriteToy(new Shoe());
+        dog.setFavoriteToy(myToys[2]);
         dog.fetch();
     }
 
@@ -128,5 +139,37 @@ public class MainApplication {
 
         ClothingPoly item = new Standard(7);
         System.out.println(item.getPrice());
+    }
+
+    private static void interfaces() {
+        System.out.println(IService.getMaxPrice());
+        System.out.println(IService.MAX_PRICE);
+
+        IService service = new IService() {
+            @Override
+            public void call() {
+                System.out.println("Overriding");
+            }
+        };
+
+        System.out.println(service.staticMethod());
+
+        service.call();
+
+        Recyclable[] rubbish = new Recyclable[3];
+        rubbish[0] = new Bottle(3);
+        rubbish[1] = new Bottle(1);
+        rubbish[2] = new Bottle(4);
+
+        for (Recyclable item : rubbish) {
+            item.recycle();
+        }
+
+        Arrays.sort(rubbish);
+
+        for (Recyclable item : rubbish) {
+            item.recycle();
+        }
+
     }
 }

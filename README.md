@@ -13,6 +13,64 @@ Class doesn't need package
 #### abstract class
 abstract methods only inside abstract class
 
+#### Interfaces
+- Instance methods are by default public and abstract
+- They can contain concrete methods only if they are either **default**, **private** or **static**
+- They can contain constants but not variables
+
+````java
+public interface <InterfaceName>{
+    <constants>
+    <abstract methods>
+    <default methods>
+    <private methods>
+    <static methods>    
+}
+
+public interface IService {
+    int MAX_PRICE = 15; // a constant, static and final
+
+    void call(); // this is public and abstract method
+
+    private String concreteMethod() { // this is a private concrete method
+        return "I can't believe this";
+    }
+
+    default String staticMethod() { // this is a default method
+        return concreteMethod();
+    }
+
+    static int getMaxPrice() { // this is a static
+        return MAX_PRICE;
+    }
+
+
+}
+````
+
+##### Comparable interface
+- We need to implement **int compareTo(T other)**
+- Returns:
+  - **-1**: this < other 
+  - **0**: this == other
+  - **1**: this > other 
+
+````java
+public class MyClass implements Comparable<MyClass> {
+
+    private int id;
+
+    public Bottle(int aId) {
+        this.id = aId;
+    }
+
+    @Override
+    public int compareTo(Bottle other) {
+        return (other.id == id) ? 0 : (other.id < id) ? 1 : -1;
+    }
+}
+````
+
 #### main class
 ```java
 public static void main(String[] args){}
@@ -103,8 +161,32 @@ int[] aInt = {1,2,3};
 ````
 
 #### Declaration
+You instantiate **Arrays** when you use new type[value], you don't instantiate a type
 ````java
-String[] aString2 = new String[3];
-int[] aInt2 = new int[16];
+String[] aString2 = new String[3]; // an array of 3 String
+int[] aInt2 = new int[16]; // an array of 3 int
+Recyclable[] rubbish = new Recyclable[3]; // we have an array of objects that implement the Recyclable interface
+Toy[] myToys = new Toy[3]; // an array of 3 abstract Toy
 ````
 
+### Objects in Memory
+- **Variables** are stored in the **Stack**
+- **Objects** are stored in the **Heap**
+- **Object references** are pointers and variables, they are store in the **Stack**
+
+### Exceptions
+#### Hierarchy
+- Throwable **(checked)**
+    - Exception **(checked)** / Error **(unchecked)**
+        - RuntimeException **(unchecked)**
+
+#### Flow
+After an exception is handled, the execution continues after the last catch handler
+````java
+try{
+    
+    }catch(Exception e){
+    System.out.println("exception is handled here");
+}
+System.out.println("execution continues here");
+````
