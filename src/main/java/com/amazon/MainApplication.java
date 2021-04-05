@@ -2,10 +2,9 @@ package com.amazon;
 
 import com.amazon.animal.*;
 import com.amazon.interfaces.*;
-
 import java.util.Scanner;
-
 import com.amazon.toy.*;
+import com.amazon.statics.*;
 
 //TODO: SpringBootApplication annotation
 public class MainApplication {
@@ -40,6 +39,9 @@ public class MainApplication {
                 break;
             case 6:
                 doubleInitialization();
+                break;
+            case 7:
+                staticCall();
                 break;
             default:
                 //TODO: change println to slf4j
@@ -108,5 +110,10 @@ public class MainApplication {
         System.out.println(someDouble);
         someDouble = .3;
         System.out.println(someDouble);
+    }
+
+    private static void staticCall(){
+        Clothing cloth = new Clothing();
+        HatMaker.toHat(cloth);
     }
 }
