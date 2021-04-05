@@ -2,7 +2,9 @@ package com.amazon;
 
 import com.amazon.animal.*;
 import com.amazon.interfaces.*;
+
 import java.util.Scanner;
+
 import com.amazon.toy.*;
 import com.amazon.statics.*;
 
@@ -42,6 +44,9 @@ public class MainApplication {
                 break;
             case 7:
                 staticCall();
+                break;
+            case 8:
+                exceptionFlow(new RuntimeException("This is an unchecked exception"));
                 break;
             default:
                 //TODO: change println to slf4j
@@ -112,8 +117,18 @@ public class MainApplication {
         System.out.println(someDouble);
     }
 
-    private static void staticCall(){
+    private static void staticCall() {
         Clothing cloth = new Clothing();
         HatMaker.toHat(cloth);
+    }
+
+    private static void exceptionFlow(RuntimeException rException) {
+        try {
+            System.out.println("Exception is thrown");
+            throw rException;
+        } catch (Exception e) {
+            System.out.println("Exception is handled here");
+        }
+        System.out.println("execution continues here");
     }
 }
