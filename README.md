@@ -333,3 +333,28 @@ Supplier<Double> lambda = () -> {return Math.PI;};
 Function<String, String> lambda = x -> x.toUpperCase();
 Function<String, String> lambda = String::toUpperCase;
 ````
+
+### Streams
+- Streams are pipelines of data. 
+- Collections are converted to streams, standard or parallel.
+- Stream methods are chained together.
+- Stream methods take lambda expressions as arguments.
+
+````java
+        List<String> names = List.of("Barclay", "Barry", "Bert", "Bot", "Bart");
+        names.stream() // or .parallelStream()
+                .filter(name -> name.contains("t"))                         // Predicate
+                .filter(name -> name.contains("a") || name.contains("e"))  // Predicate
+                .forEach(name -> System.out.println(name));                 // Consumer
+````
+
+#### Intermediate Operations
+- filter, peek, map, flatmap
+
+#### Terminal Operations
+- forEach
+- findFirst, findAny, max, min (return Optional)
+- Optional.get() return the data
+- Optional.orElse(T t) return T
+- anyMatch, allMatch, noneMatch (return boolean)
+- count (return long)
