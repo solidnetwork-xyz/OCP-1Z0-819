@@ -112,6 +112,8 @@ public class MainApplication {
         System.out.println(someDouble);
         someDouble = .3;
         System.out.println(someDouble);
+        someDouble = 4.0f;
+        System.out.println(someDouble);
     }
 
     private static void staticCall() {

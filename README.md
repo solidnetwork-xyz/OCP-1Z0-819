@@ -107,6 +107,7 @@ double someDouble = 32.16D;
 double someDouble = 2.1E12;
 double someDouble = 75; //Becomes 75.0
 double someDouble = .3;
+double someDouble = 4.0f;
 ````
 
 ### variables
@@ -141,6 +142,8 @@ if(price > 20){
     
     for(var i=0; i<10; i++){}
     
+    var var = 10;
+    
 ````
 Where can it **not** be used?
 ````java
@@ -157,7 +160,20 @@ public var price; // fields of a class
 public void setPrice(var price){} // parameters of a method
 
 public var getPrice(){} // method return types
+
+(var x, y) -> x.process(y); // You could never mix implicitly and explicitly typed lambda parameters
+
+(var x, int y) -> x.process(y);
+        
+var x -> x.toString(); // You cannot omit parenthesis for single explicitly typed lambda parameter
+
 ````
+be careful with **interfaces**
+````java
+var list = new ArrayList<String>(); // inferred as ArrayList<String>
+var itemQueue = new PriorityQueue<>(); // inferred as PriorityQueue<Object>
+````
+**numbers** usually are going to be inferred as **int** or **double**
 
 ### Operators
 #### Operator precedence
@@ -235,4 +251,11 @@ try{
     System.out.println("exception is handled here");
 }
 System.out.println("execution continues here");
+````
+
+### Lambdas
+parameter don'ts
+````java
+(Item x, y) -> x.process(y); // You could never mix implicitly and explicitly typed lambda parameters
+Item x -> x.toString(); // You cannot omit parenthesis for single explicitly typed lambda parameter
 ````

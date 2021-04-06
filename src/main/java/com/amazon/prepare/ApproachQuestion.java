@@ -112,6 +112,8 @@ public class ApproachQuestion {
         }
 
         var x = 30;
+
+        var var = 10;
     }
 
 }
