@@ -7,7 +7,7 @@ Class doesn't need package
 
 ### Access Modifiers
 - **protected**: package, subclasses
-- **default**: package
+- **no-modifier**: package
 
 ### Class
 #### abstract class
@@ -25,11 +25,14 @@ public abstract class TestClass implements TestInterface{
 
 #### Interfaces
 - Instance methods are by default public and abstract
-- They can contain concrete methods only if they are either **default**, **private** or **static**
+- They can contain concrete methods only if they are either **default** or **private** or **static**
 - They can contain constants but not variables. By default, constants are **static** and **final**
+- **default** keyword is not a modifier
+- [public][abstract|default|static] | [private][static] **method**.
+- [static][final] **field**.
 
 ````java
-public interface <InterfaceName>{
+public interface <InterfaceName> [extends <OtherInterface>]{
     <constants>
     <abstract methods>
     <default methods>
@@ -46,7 +49,7 @@ public interface IService {
         return "I can't believe this";
     }
 
-    default String staticMethod() { // this is a default method
+    default String staticMethod() { // this is a public default method
         return concreteMethod();
     }
 
@@ -57,6 +60,11 @@ public interface IService {
 
 }
 ````
+#### Inheritance Rules of default methods
+- a superclass (extended class) method takes priority over an interface **default** method.
+- a subtype interface's default method takes priority over a super-type interface's default method of that subtype. 
+- two equal subtypes interface's default method are going to be treated as abstract
+
 
 ##### Comparable interface
 - We need to implement **int compareTo(T other)**

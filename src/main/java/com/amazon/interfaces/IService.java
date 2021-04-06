@@ -1,20 +1,20 @@
 package com.amazon.interfaces;
 
-public interface IService {
-    int MAX_PRICE = 15; // a constant, static and final
+public interface IService extends ISuperService{
+    int MY_STATIC_CONSTANT = 15; // a constant, static and final
 
-    void call(); // this is public and abstract method
+    void myAbstractMethod(); // this is public and abstract method
 
-    private String concreteMethod() { // this is a private concrete method
-        return "I can't believe this";
+    private String myConcreteMethod() { // this is a private concrete method
+        return "I would be call by default method";
     }
 
-    default String staticMethod() { // this is a default method
-        return concreteMethod();
+    default String myDefaultMethod() { // this is a public default method
+        return myConcreteMethod();
     }
 
-    static int getMaxPrice() { // this is a static
-        return MAX_PRICE;
+    static int myStaticMethod() { // this is a static
+        return MY_STATIC_CONSTANT;
     }
 
 
