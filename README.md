@@ -153,6 +153,22 @@ switch(condition){
 }
 ````
 
+#### loops
+
+##### For statement
+
+````java
+    int i = 0;
+        for (; ; ) {
+            if (i >= 5)
+                break;
+
+            System.out.println(i);
+            i++;
+        }
+````
+
+
 ### Arrays
 #### Initialization
 ````java
