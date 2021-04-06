@@ -60,12 +60,12 @@ public class MyClass implements Comparable<MyClass> {
 
     private int id;
 
-    public Bottle(int aId) {
+    public MyClass(int aId) {
         this.id = aId;
     }
 
     @Override
-    public int compareTo(Bottle other) {
+    public int compareTo(MyClass other) {
         return (other.id == id) ? 0 : (other.id < id) ? 1 : -1;
     }
 }
@@ -93,7 +93,7 @@ public String fit(String otherSize){} // Method invocation is resolved based on 
 int someInt = 10_000_000;
 ````
 
-ranges: +/- **2.1MM**
+ranges: +/- **2.1B**
 
 
 #### String
@@ -163,10 +163,10 @@ int[] aInt = {1,2,3};
 #### Declaration
 You instantiate **Arrays** when you use new type[value], you don't instantiate a type
 ````java
-String[] aString2 = new String[3]; // an array of 3 String
-int[] aInt2 = new int[16]; // an array of 3 int
+String[] aString2 = new String[3]; // an array of 3 Strings
+int[] aInt2 = new int[16]; // an array of 16 ints
 Recyclable[] rubbish = new Recyclable[3]; // we have an array of objects that implement the Recyclable interface
-Toy[] myToys = new Toy[3]; // an array of 3 abstract Toy
+Toy[] myToys = new Toy[3]; // an array of 3 abstract Toys
 ````
 
 ### Objects in Memory
