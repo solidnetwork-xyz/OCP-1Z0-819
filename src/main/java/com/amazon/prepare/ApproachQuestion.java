@@ -4,7 +4,9 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
 import java.util.function.BiPredicate;
+import java.util.function.IntUnaryOperator;
 import java.util.function.Supplier;
+import java.util.function.UnaryOperator;
 import java.util.stream.Stream;
 
 public class ApproachQuestion {
@@ -57,6 +59,14 @@ public class ApproachQuestion {
         BiPredicate<Integer, Integer> myBi = (x, y) -> x == y;
 
         System.out.println(myBi.test(4, 4));
+
+        UnaryOperator<Integer> unaOp2 = (var x) -> x * 7;
+        UnaryOperator<Integer> unaOp3 = (x) -> x * 7;
+        IntUnaryOperator unaOp6 = (x) -> x * 1;
+
+        System.out.println(unaOp2.apply(3));
+        System.out.println(unaOp3.apply(2));
+        System.out.println(unaOp6.applyAsInt(7));
 
     }
 
