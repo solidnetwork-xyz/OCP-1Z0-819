@@ -129,6 +129,36 @@ if(price > 20){
 }
 ````
 
+#### Local-variable Type Inference
+````java
+    var outputStream = new ByteArrayOutputStream();
+    
+    UnaryOperator<Integer> unaOp2 = (var x) -> x * 7;
+    
+    var x = 30;
+    
+    for(var item : items){}
+    
+    for(var i=0; i<10; i++){}
+    
+````
+Where can it **not** be used?
+````java
+var price; // declarations without an initial value
+
+var price = null; // initialization with a null value
+
+var price = 9.95, tax = 0.05; // compound declarations
+
+var prices = {9.95, 5, 3.50}; // Array initializers
+
+public var price; // fields of a class
+
+public void setPrice(var price){} // parameters of a method
+
+public var getPrice(){} // method return types
+````
+
 ### Operators
 #### Operator precedence
 - From left to right

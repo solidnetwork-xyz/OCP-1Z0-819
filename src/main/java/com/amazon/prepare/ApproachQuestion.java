@@ -1,5 +1,7 @@
 package com.amazon.prepare;
 
+import java.io.*;
+import java.nio.charset.Charset;
 import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
@@ -25,6 +27,9 @@ public class ApproachQuestion {
                 break;
             case 3:
                 someStream();
+                break;
+            case 4:
+                typeInference();
                 break;
             default:
                 System.out.println("Option unavailable");
@@ -91,6 +96,22 @@ public class ApproachQuestion {
                 filter(n -> n.contains("Bart"))
                 .findAny().
                         orElse("Not Found");
+    }
+
+    public static void typeInference() {
+        var outputStream = new ByteArrayOutputStream();
+        UnaryOperator<Integer> unaOp2 = (var x) -> x * 7;
+
+        try (var inputStream = System.in;
+             var reader = new InputStreamReader(inputStream, Charset.defaultCharset());
+             var bufReader = new BufferedReader(reader)) {
+
+            bufReader.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        var x = 30;
     }
 
 }
