@@ -1,8 +1,11 @@
 package com.amazon.prepare;
 
+import java.util.List;
+import java.util.Optional;
 import java.util.Scanner;
 import java.util.function.BiPredicate;
 import java.util.function.Supplier;
+import java.util.stream.Stream;
 
 public class ApproachQuestion {
 
@@ -17,6 +20,9 @@ public class ApproachQuestion {
                 break;
             case 2:
                 functionsAndLambdas();
+                break;
+            case 3:
+                someStream();
                 break;
             default:
                 System.out.println("Option unavailable");
@@ -52,6 +58,29 @@ public class ApproachQuestion {
 
         System.out.println(myBi.test(4, 4));
 
+    }
+
+    public static void someStream() {
+        System.out.println(pickNameOptional());
+        System.out.println(pickNameString());
+    }
+
+    public static Optional pickNameOptional() {
+        List<String> names = List.of("Barclay", "Barry", "Bert", "Bort");
+        /* line 1 */
+        return names.stream().
+                filter(n -> n.contains("Bart"))
+                .findAny()
+                /* line 2*/;
+    }
+
+    public static String pickNameString() {
+        List<String> names = List.of("Barclay", "Barry", "Bert", "Bort");
+        /* line 1 */
+        return names.stream().
+                filter(n -> n.contains("Bart"))
+                .findAny().
+                        orElse("Not Found");
     }
 
 }
