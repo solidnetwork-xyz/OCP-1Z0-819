@@ -11,12 +11,22 @@ Class doesn't need package
 
 ### Class
 #### abstract class
-abstract methods only inside abstract class
+- abstract methods only inside abstract class
+- abstract class can implement interface class, and the abstract methods be resolved by a concrete class
+````java
+public interface TestInterface{
+    double calculateTax();
+}
+
+public abstract class TestClass implements TestInterface{
+    public double calculateTax(double tax){} // this is not from TestInterface
+}
+````
 
 #### Interfaces
 - Instance methods are by default public and abstract
 - They can contain concrete methods only if they are either **default**, **private** or **static**
-- They can contain constants but not variables
+- They can contain constants but not variables. By default, constants are **static** and **final**
 
 ````java
 public interface <InterfaceName>{
