@@ -1,11 +1,14 @@
 package com.amazon;
 
 import com.amazon.animal.*;
-import com.amazon.interfaces.*;
 
 import java.util.Scanner;
+import java.util.Arrays;
 
 import com.amazon.toy.*;
+import com.amazon.statics.*;
+import com.amazon.polymorphism.*;
+import com.amazon.interfaces.*;
 
 //TODO: SpringBootApplication annotation
 public class MainApplication {
@@ -24,7 +27,7 @@ public class MainApplication {
 
         switch (optionSelected) {
             case 1:
-                multipleImplementationExample();
+                interfaces();
                 break;
             case 2:
                 dogFetch();
@@ -41,6 +44,15 @@ public class MainApplication {
             case 6:
                 doubleInitialization();
                 break;
+            case 7:
+                staticCall();
+                break;
+            case 8:
+                exceptionFlow(new RuntimeException("This is an unchecked exception"));
+                break;
+            case 9:
+                polymorphism();
+                break;
             default:
                 //TODO: change println to slf4j
                 System.out.println("out of options");
@@ -48,38 +60,30 @@ public class MainApplication {
 
     }
 
-    private static void multipleImplementationExample() {
-        //TODO: change println to slf4j
-        System.out.println("before calling dogService");
-        //TODO: change new to @Autowired
-        IDogService dogServiceManager = new DogServiceServiceManager();
-        ResponseDto dogServiceManagerResponse = dogServiceManager.play();
-        //TODO: change println to slf4j
-        System.out.println("after calling dogServiceManager " + dogServiceManagerResponse);
-        //TODO: change new to @Autowired
-        IDogService dogServiceProcessor = new DogServiceServiceProcessor();
-        ResponseDto dogServiceProcessorResponse = dogServiceProcessor.play();
-        //TODO: change println to slf4j
-        System.out.println("after calling dogServiceProcessor " + dogServiceProcessorResponse);
-    }
 
     private static void dogFetch() {
-        IAnimal dog = new Dog();
+        Animal dog = new Dog();
         dog.fetch();
     }
 
     private static void catFetch() {
-        IAnimal cat = new Cat();
+        Animal cat = new Cat();
         cat.fetch();
     }
 
     private static void playWithToys() {
+
+        Toy[] myToys = new Toy[3];
+        myToys[0] = new Ball();
+        myToys[1] = new Squeaky();
+        myToys[2] = new Shoe();
+
         Dog dog = new Dog();
-        dog.setFavoriteToy(new Ball());
+        dog.setFavoriteToy(myToys[0]);
         dog.fetch();
-        dog.setFavoriteToy(new Squeaky());
+        dog.setFavoriteToy(myToys[1]);
         dog.fetch();
-        dog.setFavoriteToy(new Shoe());
+        dog.setFavoriteToy(myToys[2]);
         dog.fetch();
     }
 
@@ -108,5 +112,64 @@ public class MainApplication {
         System.out.println(someDouble);
         someDouble = .3;
         System.out.println(someDouble);
+    }
+
+    private static void staticCall() {
+        Clothing cloth = new Clothing();
+        HatMaker.toHat(cloth);
+    }
+
+    private static void exceptionFlow(RuntimeException rException) {
+        try {
+            System.out.println("Exception is thrown");
+            throw rException;
+        } catch (Exception e) {
+            System.out.println("Exception is handled here");
+        }
+        System.out.println("execution continues here");
+    }
+
+    private static void polymorphism() {
+        ClothingPoly[] items = new ClothingPoly[2];
+        items[0] = new Tailored(10, 1);
+        items[1] = new Standard(5);
+        for (ClothingPoly item : items) {
+            System.out.println(item.getPrice());
+        }
+
+        ClothingPoly item = new Standard(7);
+        System.out.println(item.getPrice());
+    }
+
+    private static void interfaces() {
+        System.out.println(IService.getMaxPrice());
+        System.out.println(IService.MAX_PRICE);
+
+        IService service = new IService() {
+            @Override
+            public void call() {
+                System.out.println("Overriding");
+            }
+        };
+
+        System.out.println(service.staticMethod());
+
+        service.call();
+
+        Recyclable[] rubbish = new Recyclable[3];
+        rubbish[0] = new Bottle(3);
+        rubbish[1] = new Bottle(1);
+        rubbish[2] = new Bottle(4);
+
+        for (Recyclable item : rubbish) {
+            item.recycle();
+        }
+
+        Arrays.sort(rubbish);
+
+        for (Recyclable item : rubbish) {
+            item.recycle();
+        }
+
     }
 }

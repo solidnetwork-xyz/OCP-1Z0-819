@@ -2,20 +2,19 @@ package com.amazon.animal;
 
 import com.amazon.toy.*;
 
-public class Dog extends Animal implements IAnimal{
+public class Dog extends Animal {
 
     private Toy favoriteToy;
 
-    public void setFavoriteToy(Toy toy){
+    public void setFavoriteToy(Toy toy) {
         this.favoriteToy = toy;
     }
 
-    @Override
-    public void fetch(){
+    public void fetch() {
         //TODO: change println to slf4j
         System.out.println("I'm a dog, I'm fetching this toy");
 
-        if(null!=favoriteToy){
+        if (null != favoriteToy) {
             favoriteToy.play();
         }
     }

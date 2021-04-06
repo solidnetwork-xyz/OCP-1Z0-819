@@ -1,9 +1,8 @@
 package com.amazon.animal;
 
-public class Cat extends Animal implements IAnimal{
+public class Cat extends Animal {
 
-    @Override
-    public void fetch(){
+    public void fetch() {
         System.out.println("I'm a cat. I'm fetching this toy.");
     }
 }
