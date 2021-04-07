@@ -3,16 +3,16 @@ OCP Oracle Certified Professional Java SE 11 Developer practices
 
 ## Notes:
 ### Packages:
-Class doesn't need package
+**package** is optional
 
 ### Access Modifiers
 - **protected**: package, subclasses
 - **no-modifier**: package
 
 ### Class
-#### abstract class
+#### Abstract classes
 - abstract methods only inside abstract class
-- abstract class can implement interface class, and the abstract methods be resolved by a concrete class
+- abstract class can implement interface class, and the abstract methods must be resolved by a concrete class
 ````java
 public interface TestInterface{
     double calculateTax();
@@ -24,54 +24,61 @@ public abstract class TestClass implements TestInterface{
 ````
 
 #### Interfaces
-- Instance methods are by default public and abstract
-- They can contain concrete methods only if they are either **default** or **private** or **static**
-- They can contain constants but not variables. By default, constants are **static** and **final**
+- Instance methods are by default **public** and **abstract**
+- Methods are concrete unless there is an **abstract** keyword
+- By default, constants are **static** and **final**. They can contain constants but not variables.
 - **default** keyword is not a modifier
 - [public][abstract|default|static] | [private][static] **method**.
 - [static][final] **field**.
 
 ````java
 public interface <InterfaceName> [extends <OtherInterface>]{
+        
     <constants>
+
     <abstract methods>
+
     <default methods>
+
     <private methods>
+
     <static methods>    
 }
 
-public interface IService {
-    int MAX_PRICE = 15; // a constant, static and final
+public interface IService extends ISuperService {
+    int MY_STATIC_CONSTANT = 15; // a constant, static and final
 
-    void call(); // this is public and abstract method
+    void myAbstractMethod(); // this is public and abstract method
 
-    private String concreteMethod() { // this is a private concrete method
-        return "I can't believe this";
+    private String myConcreteMethod() { // this is a private concrete method
+        return "I would be call by default method";
     }
 
-    default String staticMethod() { // this is a public default method
-        return concreteMethod();
+    default String myDefaultMethod() { // this is a public default method
+        return myConcreteMethod();
     }
 
-    static int getMaxPrice() { // this is a static
-        return MAX_PRICE;
+    static int myStaticMethod() { // this is a static
+        return MY_STATIC_CONSTANT;
     }
 
-
+    private static String myPrivateStaticMethod() {
+        return "all static are concrete";
+    }
 }
 ````
-#### Inheritance Rules of default methods
-- a superclass (extended class) method takes priority over an interface **default** method.
-- a subtype interface's default method takes priority over a super-type interface's default method of that subtype. 
-- two equal subtypes interface's default method are going to be treated as abstract
+#### Inheritance rules of default methods
+- a superclass (extended class) method takes priority over an interface **default method**.
+- a subtype interface's **default method** takes priority over a super-type interface's **default method** of that subtype. 
+- two equal subtypes interface's **default method** are going to be treated as abstract
 
 
-##### Comparable interface
+#### Comparable interface
 - We need to implement **int compareTo(T other)**
 - Returns:
-  - **-1**: this < other 
   - **0**: this == other
   - **1**: this > other 
+  - **-1**: this < other
 
 ````java
 public class MyClass implements Comparable<MyClass> {
@@ -84,23 +91,24 @@ public class MyClass implements Comparable<MyClass> {
 
     @Override
     public int compareTo(MyClass other) {
-        return (other.id == id) ? 0 : (other.id < id) ? 1 : -1;
+        return (id == other.id) ? 0 : (id > other.id) ? 1 : -1;
     }
 }
 ````
 
-#### main class
+#### Main class
 ```java
 public static void main(String[] args){}
 ```
 Non-static field 'declared out of main' cannot be referenced from a static context
 
-#### method
+#### Methods
 - The signature of a method is: a name +  parameter types
 - No two method with the same signature can exist in a class, even if they have different return types
 
 ````java
 public boolean fit(String sizeToCompare){}
+
 public String fit(String otherSize){} // Method invocation is resolved based on a name +  parameter types
 ````
         
@@ -120,26 +128,33 @@ Uninitialized has a default value **null**
 #### double
 ````java
 double someDouble = 32.16;
+
 double someDouble = 32.16d;
+
 double someDouble = 32.16D;
+
 double someDouble = 2.1E12;
+
 double someDouble = 75; //Becomes 75.0
+        
 double someDouble = .3;
+
 double someDouble = 4.0f;
 ````
 
-### variables
+### Variables
 
 #### Names
 Names must not start with **_**, numeric character, or include a white space. 
 
-#### declaration
+#### Declaration
 ````java
 String name, city;
+
 String country ="USA", state="CO";
 ````
 
-##### Scope
+#### Scope
 Variables can have a scope of specific block of code
 ````java
 if(price > 20){
@@ -148,7 +163,7 @@ if(price > 20){
 }
 ````
 
-#### Local-variable Type Inference
+#### Local-variable type inference
 ````java
     var outputStream = new ByteArrayOutputStream();
     
@@ -163,7 +178,7 @@ if(price > 20){
     var var = 10;
     
 ````
-Where can it **not** be used?
+Where can var **not** be used?
 ````java
 var price; // declarations without an initial value
 
@@ -189,6 +204,7 @@ var x -> x.toString(); // You cannot omit parenthesis for single explicitly type
 be careful with **interfaces**
 ````java
 var list = new ArrayList<String>(); // inferred as ArrayList<String>
+        
 var itemQueue = new PriorityQueue<>(); // inferred as PriorityQueue<Object>
 ````
 **numbers** usually are going to be inferred as **int** or **double**
@@ -217,9 +233,9 @@ switch(condition){
 }
 ````
 
-#### loops
+#### Loops
 
-##### For statement
+**for** statement
 
 ````java
     int i = 0;
@@ -237,16 +253,20 @@ switch(condition){
 #### Initialization
 ````java
 String[] aString = {"St1","St2","St3"};
+
 int[] aInt = {1,2,3};
 ````
 
 #### Declaration
 You instantiate **Arrays** when you use new type[value], you don't instantiate a type
 ````java
-String[] aString2 = new String[3]; // an array of 3 Strings
-int[] aInt2 = new int[16]; // an array of 16 ints
-Recyclable[] rubbish = new Recyclable[3]; // we have an array of objects that implement the Recyclable interface
-Toy[] myToys = new Toy[3]; // an array of 3 abstract Toys
+String[] aString2 = new String[3]; // an Array of 3 Strings
+        
+int[] aInt2 = new int[16]; // an Array of 16 ints
+        
+Recyclable[] rubbish = new Recyclable[3]; // we have an Array of Objects that implement the Recyclable interface
+        
+Toy[] myToys = new Toy[3]; // an Array of 3 abstract Toys
 ````
 
 ### Objects in Memory
@@ -286,7 +306,7 @@ public class TestClass {
 }
 ````
 
-#### Built-in Functional Interfaces
+#### Built-in functional interfaces
 | Lambda Type     | Abstract Method | Example |
 | ----------- | ----------- |-------|
 | Function\<T,R\> | R apply(T t); | Function\<Integer,Double\> lambda = x -> 2.0*x; |
@@ -301,14 +321,18 @@ public class TestClass {
 
 ````java
 Consumer<String> lambda = x -> System.out.println(x);
+
 Consumer<String> lambda = (x) -> System.out.println(x);
+
 Consumer<String> lambda = (String x) -> System.out.println(x);
+
 BiConsumer<String, String> lambda = (x,y) -> System.out.println(x+y); 
 ````
 
-#### parameter don'ts
+#### Parameter don'ts
 ````java
 (Item x, y) -> x.process(y); // You could never mix implicitly and explicitly typed lambda parameters
+        
 Item x -> x.toString(); // You cannot omit parenthesis for single explicitly typed lambda parameter
 ````
 
@@ -331,6 +355,7 @@ Supplier<Double> lambda = () -> {return Math.PI;};
 #### Shorthand
 ````java
 Function<String, String> lambda = x -> x.toUpperCase();
+
 Function<String, String> lambda = String::toUpperCase;
 ````
 
@@ -342,22 +367,23 @@ Function<String, String> lambda = String::toUpperCase;
 
 ````java
         List<String> names = List.of("Barclay", "Barry", "Bert", "Bot", "Bart");
-        names.stream() // or .parallelStream()
+
+        names.stream()                                                      // or .parallelStream()
                 .filter(name -> name.contains("t"))                         // Predicate
                 .filter(name -> name.contains("a") || name.contains("e"))  // Predicate
                 .forEach(name -> System.out.println(name));                 // Consumer
 ````
 
-#### Intermediate Operations
+#### Intermediate operations
 - filter, peek, map, flatmap
 
-#### Terminal Operations
+#### Terminal operations
 - forEach
-- findFirst, findAny, max, min (return Optional)
-- Optional.get() return the data
-- Optional.orElse(T t) return T
-- anyMatch, allMatch, noneMatch (return boolean)
-- count (return long)
+- findFirst, findAny, max, min **return Optional**
+- Optional.get() **return the data**
+- Optional.orElse(T t) **return T**
+- anyMatch, allMatch, noneMatch **return boolean**
+- count **return long**
 
 ### Modularity
 

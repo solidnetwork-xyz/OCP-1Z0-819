@@ -16,7 +16,7 @@ public class Bottle implements Recyclable, Comparable<Bottle> {
 
     @Override
     public int compareTo(Bottle other) {
-        return (other.id == id) ? 0 : (other.id < id) ? 1 : -1;
+        return (id == other.id) ? 0 : (id > other.id) ? 1 : -1;
     }
 
 
