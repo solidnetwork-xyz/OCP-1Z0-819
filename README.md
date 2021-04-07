@@ -148,7 +148,9 @@ double someDouble = 4.0f;
 ### Variables
 
 #### Names
-Names must not start with **_**, numeric character, or include a white space. 
+Names must not start with **_**, numeric characters or include a white space.
+Use **_** alone is illegal
+By convention, names must not start **$**
 
 #### Declaration
 ````java
