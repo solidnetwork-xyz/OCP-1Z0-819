@@ -8,8 +8,6 @@ public class Main {
         names.stream() // or .parallelStream()
                 .filter(name -> name.contains("t"))                         // Predicate
                 .filter(name -> name.contains("a") || name.contains("e"))  // Predicate
-                .findFirst()
-                .orElse()
-                //.forEach(name -> System.out.println(name));                 // Consumer
+                .forEach(name -> System.out.println(name));                 // Consumer
     }
 }

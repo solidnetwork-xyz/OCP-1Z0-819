@@ -358,3 +358,42 @@ Function<String, String> lambda = String::toUpperCase;
 - Optional.orElse(T t) return T
 - anyMatch, allMatch, noneMatch (return boolean)
 - count (return long)
+
+### Modularity
+
+Listing all modules
+````shell
+$java --list-module
+````
+
+#### Types
+- Standard modules: **java.***
+- JDK modules: **jdk.***
+
+#### Some modules
+- java.base
+- java.compiler
+- java.desktop
+- java.logging
+- java.net.http
+- java.se
+- java.sql
+- jdk.compiler
+- jdk.httpserver
+- jdk.jartool
+- jdk.javadoc
+- jdk.jdeps  
+- jdk.jlink  
+- jdk.jshell
+
+
+#### Declaration
+
+- A module is declare in a **module-info.java** file.
+- It's placed in the root directory.
+````java
+module modulename {
+    requires [transitive] ...;
+    exports ... [to] ...;
+}
+````
