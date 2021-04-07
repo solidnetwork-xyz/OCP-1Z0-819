@@ -112,6 +112,8 @@ public class MainApplication {
         System.out.println(someDouble);
         someDouble = .3;
         System.out.println(someDouble);
+        someDouble = 4.0f;
+        System.out.println(someDouble);
     }
 
     private static void staticCall() {
@@ -142,19 +144,14 @@ public class MainApplication {
     }
 
     private static void interfaces() {
-        System.out.println(IService.getMaxPrice());
-        System.out.println(IService.MAX_PRICE);
+        System.out.println(IService.myStaticMethod());
+        System.out.println(IService.MY_STATIC_CONSTANT);
 
-        IService service = new IService() {
-            @Override
-            public void call() {
-                System.out.println("Overriding");
-            }
-        };
+        IService service = new MyService();
 
-        System.out.println(service.staticMethod());
+        System.out.println(service.myDefaultMethod());
 
-        service.call();
+        service.myAbstractMethod();
 
         Recyclable[] rubbish = new Recyclable[3];
         rubbish[0] = new Bottle(3);
