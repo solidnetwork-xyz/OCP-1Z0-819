@@ -2,6 +2,9 @@
 OCP Oracle Certified Professional Java SE 11 Developer practices
 
 ## Notes:
+### Keywords
+![](images/keywords.PNG)
+
 ### Packages:
 **package** is optional
 
