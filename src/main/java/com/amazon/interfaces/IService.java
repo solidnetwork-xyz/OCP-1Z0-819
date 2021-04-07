@@ -1,6 +1,6 @@
 package com.amazon.interfaces;
 
-public interface IService extends ISuperService{
+public interface IService extends ISuperService {
     int MY_STATIC_CONSTANT = 15; // a constant, static and final
 
     void myAbstractMethod(); // this is public and abstract method
@@ -17,5 +17,7 @@ public interface IService extends ISuperService{
         return MY_STATIC_CONSTANT;
     }
 
-
+    private static String myPrivateStaticMethod() {
+        return "all static are concrete";
+    }
 }
