@@ -6,16 +6,16 @@ OCP Oracle Certified Professional Java SE 11 Developer practices
 ![](images/keywords.PNG)
 
 ### Packages:
-**package** is optional
+**package** is optional.
 
 ### Access Modifiers
-- **protected**: package, subclasses
-- **no-modifier**: package
+- **protected**: package, subclasses.
+- **no-modifier**: package.
 
 ### Class
 #### Abstract classes
-- abstract methods only inside abstract class
-- abstract class can implement interface class, and the abstract methods must be resolved by a concrete class
+- Abstract methods only inside abstract class.
+- Abstract class can implement interface class, and the abstract methods must be resolved by a concrete class.
 ````java
 public interface TestInterface{
     double calculateTax();
@@ -27,10 +27,10 @@ public abstract class TestClass implements TestInterface{
 ````
 
 #### Interfaces
-- Instance methods are by default **public** and **abstract**
-- Methods are concrete unless there is an **abstract** keyword
+- Interface methods are by default **public** and **abstract**.
+- Methods are concrete unless there is an **abstract** keyword.
 - By default, constants are **static** and **final**. They can contain constants but not variables.
-- **default** keyword is not a modifier
+- **default** keyword is not a modifier.
 - [public][abstract|default|static] | [private][static] **method**.
 - [static][final] **field**.
 
@@ -73,7 +73,7 @@ public interface IService extends ISuperService {
 #### Inheritance rules of default methods
 - a superclass (extended class) method takes priority over an interface **default method**.
 - a subtype interface's **default method** takes priority over a super-type interface's **default method** of that subtype. 
-- two equal subtypes interface's **default method** are going to be treated as abstract
+- two equal subtypes interface's **default method** are going to be treated as abstract.
 
 
 #### Comparable interface
@@ -103,11 +103,11 @@ public class MyClass implements Comparable<MyClass> {
 ```java
 public static void main(String[] args){}
 ```
-Non-static field 'declared out of main' cannot be referenced from a static context
+Non-static field 'declared out of main' cannot be referenced from a static context.
 
 #### Methods
-- The signature of a method is: a name +  parameter types
-- No two method with the same signature can exist in a class, even if they have different return types
+- The signature of a method is: a name +  parameter types.
+- No two method with the same signature can exist in a class, even if they have different return types.
 
 ````java
 public boolean fit(String sizeToCompare){}
@@ -149,7 +149,7 @@ double someDouble = 4.0f;
 
 #### Names
 - Names must not start with **_**, numeric characters or include a white space.
-- Use **_** alone is illegal
+- Use **_** alone is illegal.
 - By convention, names must not start **$**
 
 #### Declaration
@@ -160,7 +160,7 @@ String country ="USA", state="CO";
 ````
 
 #### Scope
-Variables can have a scope of specific block of code
+Variables can have a scope of specific block of code.
 ````java
 if(price > 20){
     double discount = 0.5;
@@ -206,26 +206,26 @@ public var getPrice(){} // method return types
 var x -> x.toString(); // You cannot omit parenthesis for single explicitly typed lambda parameter
 
 ````
-be careful with **interfaces**
+be careful with **interfaces**.
 ````java
 var list = new ArrayList<String>(); // inferred as ArrayList<String>
         
 var itemQueue = new PriorityQueue<>(); // inferred as PriorityQueue<Object>
 ````
-**numbers** usually are going to be inferred as **int** or **double**
+**numbers** usually are going to be inferred as **int** or **double**.
 
 ### Operators
 #### Operator precedence
-- From left to right
-- Parentheses
+- From left to right.
+- Parentheses.
 - ++/--
-- Multiplication and division
-- Addition and subtraction 
+- Multiplication and division.
+- Addition and subtraction .
 
 
 ### Flow Control
 #### switch
-condition doesn't need to be final
+condition doesn't need to be final.
 
 ````java
 String codition = "Used";
@@ -240,7 +240,7 @@ switch(condition){
 
 #### Loops
 
-**for** statement
+**for** statement:
 
 ````java
     int i = 0;
@@ -263,7 +263,7 @@ int[] aInt = {1,2,3};
 ````
 
 #### Declaration
-You instantiate **Arrays** when you use new type[value], you don't instantiate a type
+You instantiate **Arrays** when you use new type[value], you don't instantiate a type.
 ````java
 String[] aString2 = new String[3]; // an Array of 3 Strings
         
@@ -275,9 +275,9 @@ Toy[] myToys = new Toy[3]; // an Array of 3 abstract Toys
 ````
 
 ### Objects in Memory
-- **Variables** are stored in the **Stack**
-- **Objects** are stored in the **Heap**
-- **Object references** are pointers and variables, they are store in the **Stack**
+- **Variables** are stored in the **Stack**.
+- **Objects** are stored in the **Heap**.
+- **Object references** are pointers and variables, they are store in the **Stack**.
 
 ### Exceptions
 #### Hierarchy
@@ -286,7 +286,7 @@ Toy[] myToys = new Toy[3]; // an Array of 3 abstract Toys
         - RuntimeException **(unchecked)**
 
 #### Flow
-After an exception is handled, the execution continues after the last catch handler
+After an exception is handled, the execution continues after the last catch handler.
 ````java
 try{
     
@@ -349,7 +349,7 @@ Item x -> x.toString(); // You cannot omit parenthesis for single explicitly typ
 
 ````java
 Consumer<String> lambda = x -> {
-    x = x + "Chocolate";
+    x = x + "Amazon";
     System.out.println(x);
 };
 
@@ -380,7 +380,10 @@ Function<String, String> lambda = String::toUpperCase;
 ````
 
 #### Intermediate operations
-- filter, peek, map, flatmap
+- filter
+- peek
+- map
+- flatmap
 
 #### Terminal operations
 - forEach
