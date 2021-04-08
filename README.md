@@ -1,6 +1,8 @@
 # OCP-1Z0-819
 OCP Oracle Certified Professional Java SE 11 Developer practices
 
+[**ASCII symbols**](https://github.com/joseosuna-engineer/ASCII-symbol-names-java/blob/main/README.md)
+
 ## Notes:
 ### Keywords
 ![](images/keywords.PNG)
