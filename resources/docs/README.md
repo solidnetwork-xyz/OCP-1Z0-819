@@ -73,16 +73,16 @@ public interface IService extends ISuperService {
 ````
 ### Inheritance rules of default methods
 - a superclass (extended class) method takes priority over an interface **default method**.
-- a subtype interface's **default method** takes priority over a super-type interface's **default method** of that subtype. 
+- a subtype interface's **default method** takes priority over a super-type interface's **default method** of that subtype.
 - two equal subtypes interface's **default method** are going to be treated as abstract.
 
 
 ### Comparable interface
 - We need to implement **int compareTo(T other)**
 - Returns:
-  - **0**: this == other
-  - **1**: this > other 
-  - **-1**: this < other
+    - **0**: this == other
+    - **1**: this > other
+    - **-1**: this < other
 
 ````java
 public class MyClass implements Comparable<MyClass> {
@@ -115,7 +115,7 @@ public boolean fit(String sizeToCompare){}
 
 public String fit(String otherSize){} // Method invocation is resolved based on a name +  parameter types
 ````
-        
+
 ## Types
 
 ### int
@@ -342,9 +342,9 @@ BiConsumer<String, String> lambda = (x,y) -> System.out.println(x+y);
 Item x -> x.toString(); // You cannot omit parenthesis for single explicitly typed lambda parameter
 ````
 
-### Braces 
-- braces on lambda expressions are optional if a lambda expression contains only one statement. 
-- Enclose multiple statements within curly braces. 
+### Braces
+- braces on lambda expressions are optional if a lambda expression contains only one statement.
+- Enclose multiple statements within curly braces.
 - Include a semicolon after each statement and at the end of the lambda expression.
 - Include a return statement for expressions that return values.
 
@@ -366,7 +366,7 @@ Function<String, String> lambda = String::toUpperCase;
 ````
 
 ## Streams
-- Streams are pipelines of data. 
+- Streams are pipelines of data.
 - Collections are converted to streams, standard or parallel.
 - Stream methods are chained together.
 - Stream methods take lambda expressions as arguments.
@@ -417,8 +417,8 @@ $java --list-module
 - jdk.httpserver
 - jdk.jartool
 - jdk.javadoc
-- jdk.jdeps  
-- jdk.jlink  
+- jdk.jdeps
+- jdk.jlink
 - jdk.jshell
 
 
