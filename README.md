@@ -9,9 +9,7 @@ OCP Oracle Certified Professional Java SE 11 Developer practices notes.
 ## Packages
 **package** is optional.
 
-## Access modifiers
-- **protected**: package, subclasses.
-- **no-modifier**: package.
+## [Access modifiers](resources/docs/access-modifiers.md)
 
 ## [Class](resources/docs/class.md)
 
