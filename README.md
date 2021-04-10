@@ -17,13 +17,7 @@ OCP Oracle Certified Professional Java SE 11 Developer practices notes.
 
 ## [Variables](resources/docs/variables.md)
 
-## Operators
-### Operator precedence
-- From left to right.
-- Parentheses.
-- ++/--
-- Multiplication and division.
-- Addition and subtraction.
+## [Operators](resources/docs/operators.md)
 
 ## [Flow Control](resources/docs/flow-control.md)
 
