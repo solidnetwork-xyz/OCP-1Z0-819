@@ -8,7 +8,7 @@ OCP Oracle Certified Professional Java SE 11 Developer practices notes.
 - **no-modifier**: package.
 
 ````java
-package com.amazon.accessmodifiers.other;
+package com.prottonne.accessmodifiers.other;
 
 public class AccessClass {
 
@@ -20,10 +20,11 @@ public class AccessClass {
 
 }
 ````
-````java
-package com.amazon.accessmodifiers;
 
-import com.amazon.accessmodifiers.other.AccessClass;
+````java
+package com.prottonne.accessmodifiers;
+
+import com.prottonne.accessmodifiers.other.AccessClass;
 
 public class AccessSubClass extends AccessClass {
     
