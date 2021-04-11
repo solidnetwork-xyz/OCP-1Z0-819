@@ -33,7 +33,7 @@ $java --list-module
 
 ### Declaration
 
-- A module is declare in a **module-info.java** file.
+- A module is declared in a **module-info.java** file.
 - It's placed in the root directory.
 ````java
 module modulename {
