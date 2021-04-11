@@ -24,7 +24,3 @@ OCP Oracle Certified Professional Java SE 11 Developer practices notes.
 |logical OR | &#124;&#124; |
 |ternary | ? |
 |assignment| = additive, multiplicative, bit shift, bitwise |  
-
-- ++/--
-- Multiplication and division.
-- Addition and subtraction.
