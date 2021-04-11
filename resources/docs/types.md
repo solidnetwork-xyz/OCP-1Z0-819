@@ -48,6 +48,16 @@ OCP Oracle Certified Professional Java SE 11 Developer practices notes.
 <td align="center">true/false</td>
 <td align="center">65K chars</td>
 </tr>
+<tr>
+<td align="center">127</td>
+<td align="center">32K</td>
+<td align="center">two point one times ten to the nineth power</td>
+<td align="center">nine point two times ten to the eighteenth power</td>
+<td align="center">three point four times ten to the thirty eighth power</td>
+<td align="center">one point seven times ten to the three hundred and eighth power</td>
+<td align="center">true/false</td>
+<td align="center">65K chars</td>
+</tr>          
 </tbody>
 </table>
 
