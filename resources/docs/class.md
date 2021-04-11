@@ -79,8 +79,8 @@ public class MyClass implements Comparable<MyClass> {
 
     private int id;
 
-    public MyClass(int aId) {
-        this.id = aId;
+    public MyClass(int anId) {
+        this.id = anId;
     }
 
     @Override
