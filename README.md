@@ -26,7 +26,7 @@ OCP Oracle Certified Professional Java SE 11 Developer practices notes.
 ## Objects in memory
 - **Variables** are stored in the **Stack**.
 - **Objects** are stored in the **Heap**.
-- **Object references** are pointers and variables, they are store in the **Stack**.
+- **Object references** are pointers and variables, they are stored in the **Stack**.
 
 ## Exceptions
 ### Hierarchy
