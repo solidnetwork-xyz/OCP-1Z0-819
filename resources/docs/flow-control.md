@@ -30,11 +30,18 @@ You can omit curly braces if:
 ````
 
 ### switch
-condition doesn't need to be final.
+* Expressions don't need to be final.
+* Expressions could be:
+  *  byte
+  *  short
+  *  int
+  *  char
+  *  String
+  *  enum
 
 ````java
-String codition = "Used";
-switch(condition){
+String expression = "Used";
+switch(expression){
     case "Used": 
         discount = price * 0.1;
         break;
