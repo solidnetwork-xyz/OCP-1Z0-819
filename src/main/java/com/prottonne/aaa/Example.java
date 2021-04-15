@@ -11,7 +11,7 @@
  *
  */
 
-package com.prottonne;
+package com.prottonne.aaa;
 
-public class Example {
+public class Example extends SuperExample{
 }
