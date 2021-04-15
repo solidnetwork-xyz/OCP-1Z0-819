@@ -14,6 +14,7 @@ OCP Oracle Certified Professional Java SE 11 Developer practices notes.
 ### Abstract classes
 - Abstract methods only inside abstract class.
 - Abstract class can implement interface class, and the abstract methods must be resolved by a concrete class.
+- when you add **abstract** keyword you prevent direct instance 
 ````java
 public interface TestInterface{
     double calculateTax();
@@ -21,7 +22,27 @@ public interface TestInterface{
 
 public abstract class TestClass implements TestInterface{
     public double calculateTax(double tax){} // this is not from TestInterface
+
+    public abstract void abstractFromAbstract();
 }
+
+public abstract class SecondAbstractTestClass extends TestClass {
+  // nothing is mandatory here
+}
+
+public class TestConcrete extends TestClass {
+  @Override
+  public double calculateTax() {
+    return 16;
+  }
+
+  @Override
+  public void abstractFromAbstract() {
+    System.out.println("This is mandatory");
+  }
+}
+
+
 ````
 
 ### Interfaces

@@ -6,4 +6,5 @@ public abstract class TestClass implements TestInterface {
         return tax;
     }
 
+    public abstract void abstractFromAbstract();
 }
