@@ -13,5 +13,7 @@
 
 package com.prottonne.aaa;
 
-public class Example extends SuperExample{
+public class Example {
+
+
 }

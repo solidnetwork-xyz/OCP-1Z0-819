@@ -50,9 +50,6 @@ public class MainApplication {
             case 8:
                 exceptionFlow(new RuntimeException("This is an unchecked exception"));
                 break;
-            case 9:
-                polymorphism();
-                break;
             default:
                 //TODO: change println to slf4j
                 System.out.println("out of options");
@@ -131,17 +128,7 @@ public class MainApplication {
         System.out.println("execution continues here");
     }
 
-    private static void polymorphism() {
-        ClothingPoly[] items = new ClothingPoly[2];
-        items[0] = new Tailored(10, 1);
-        items[1] = new Standard(5);
-        for (ClothingPoly item : items) {
-            System.out.println(item.getPrice());
-        }
 
-        ClothingPoly item = new Standard(7);
-        System.out.println(item.getPrice());
-    }
 
     private static void interfaces() {
         System.out.println(IService.myStaticMethod());
