@@ -105,3 +105,9 @@ public boolean fit(String sizeToCompare){}
 
 public String fit(String otherSize){} // Method invocation is resolved based on a name +  parameter types
 ````
+
+### Enumerations
+* Enum values are implicitly:
+  * public
+  * static
+  * final
