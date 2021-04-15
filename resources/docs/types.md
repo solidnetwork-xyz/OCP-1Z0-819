@@ -104,3 +104,8 @@ double someDouble = .3;
 
 double someDouble = 4.0f;
 ````
+### LocalDate, LocalTime, LocalDateTime
+* They are immutable
+
+### BigDecimal, BigInteger
+* They are immutable
