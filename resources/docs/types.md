@@ -68,7 +68,7 @@ int someInt = 10_000_000;
 ````
 
 ### String
-* Uninitialized has a default value **null**
+* All uninitialized **objects** have a default value **null**
 * In operations: lower bound is inclusive to the result. The upper bound is not inclusive to the result.  
 * It's immutable: actions always produce a new String
 * For complex text manipulation cases use a class that is not immutable: **StringBuilder**

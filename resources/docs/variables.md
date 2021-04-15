@@ -27,6 +27,7 @@ if(price > 20){
 ````
 
 ### Local-variable type inference
+* Infer types only in **local variables** with **initializers**
 ````java
     var outputStream = new ByteArrayOutputStream();
     
@@ -72,3 +73,13 @@ var itemQueue = new PriorityQueue<>(); // inferred as PriorityQueue<Object>
 ````
 **numbers** usually are going to be inferred as **int** or **double**.
 
+### Constants
+final in variables = class instances, local, parameters
+
+### Static
+
+````java
+import static Math.random;
+
+double value = random();
+````
