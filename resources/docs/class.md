@@ -7,6 +7,10 @@ OCP Oracle Certified Professional Java SE 11 Developer practices notes.
 - if object is null, the **instanceof** operator returns false.
 - if super class has a constructor with parameters, and you extend it, you must call super(parameters)
 
+### Class and Object Initialization
+- All code of class (static), only once per class
+- Each object instance and its parents
+
 ### Abstract classes
 - Abstract methods only inside abstract class.
 - Abstract class can implement interface class, and the abstract methods must be resolved by a concrete class.
