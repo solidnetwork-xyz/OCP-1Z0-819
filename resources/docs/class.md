@@ -4,6 +4,9 @@ OCP Oracle Certified Professional Java SE 11 Developer practices notes.
 [README.md](../../README.md#class)
 
 ## Class
+- if object is null, the **instanceof** operator returns false.
+- if super class has a constructor with parameters, and you extend it, you must call super(parameters)
+
 ### Abstract classes
 - Abstract methods only inside abstract class.
 - Abstract class can implement interface class, and the abstract methods must be resolved by a concrete class.
