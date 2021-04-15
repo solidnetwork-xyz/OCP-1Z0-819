@@ -45,6 +45,11 @@ public class TestConcrete extends TestClass {
 
 ````
 
+### Final class and methods
+- Class cannot extend a class that is marked with the **final** keyword.
+- The subclass cannot override a superclass method that is marked with the **final** keyword. 
+
+
 ### Interfaces
 - Interface methods are by default **public** and **abstract**.
 - Methods are concrete unless there is an **abstract** keyword.
