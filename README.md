@@ -23,6 +23,8 @@ OCP Oracle Certified Professional Java SE 11 Developer practices notes.
 
 ## [Arrays](resources/docs/arrays.md)
 
+## [Collections](resources/docs/collections.md)
+
 ## Objects in memory
 - **Variables** are stored in the **Stack**.
 - **Objects** are stored in the **Heap**.
