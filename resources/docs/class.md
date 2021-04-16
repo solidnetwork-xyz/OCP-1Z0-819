@@ -98,7 +98,9 @@ public interface IService extends ISuperService {
 - a superclass (extended class) method takes priority over an interface **default method**.
 - a subtype interface's **default method** takes priority over a super-type interface's **default method** of that subtype.
 - two equal subtypes interface's **default method** are going to be treated as abstract.
-
+- A class must override default interface method only if conflicts with another default method.
+- **implements** method a() from an interface and at the same time **extends** method a() from a concrete class resolve.
+- public **default** method in an interface is **public** in the implementation class
 
 ### Comparable interface
 - We need to implement **int compareTo(T other)**
@@ -108,6 +110,10 @@ public interface IService extends ISuperService {
     - **-1**: this < other
 
 ````java
+public interface Comparable<T>{
+    int compareTo(T o);
+}
+
 public class MyClass implements Comparable<MyClass> {
 
     private int id;
@@ -121,6 +127,46 @@ public class MyClass implements Comparable<MyClass> {
         return (id == other.id) ? 0 : (id > other.id) ? 1 : -1;
     }
 }
+````
+
+### Comparator interface
+- We need to implement **int compare(T o1, T o2)**
+- Returns:
+  - **0**: this == other
+  - **1**: this > other
+  - **-1**: this < other
+
+````java
+import java.util.Arrays;
+
+public interface Comparator<T> {
+  int compare(T o1, T o2);
+}
+
+public class MyClassSorter implements Comparator<MyClass> {
+
+  @Override
+  public int compare(MyClass c1, MyClass c2) {
+    return (c1.getId() == c2.getId()) ? 0 : (c1.getId() > c2.getId()) ? 1 : -1;
+  }
+}
+
+public class MyClass {
+
+  private int id;
+
+  public MyClass(int anId) {
+    this.id = anId;
+  }
+}
+
+public class Main {
+  public static void main(String[] args) {
+    MyClass[] classes = {new MyClass(5), new MyClass(2)};
+    Arrays.sort(classes, new MyClassSorter());
+  }
+}
+
 ````
 
 ### Main class

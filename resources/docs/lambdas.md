@@ -3,6 +3,32 @@ OCP Oracle Certified Professional Java SE 11 Developer practices notes.
 
 [README.md](../../README.md#lambdas)
 
+## Generics
+- It allows variables and methods to operate on objects of various types while providing compile-time type safety.
+- Conventions:
+  * T (type)
+  * V (value)
+  * K (key)  
+  * a letter o a word  
+- Generics can be used with both classes and interfaces.
+
+````java
+public class Some<T> {
+    private T value;
+    public T getValue(){
+        return value;
+    }
+    public void setValue(T value){
+        this.value = value;
+    }
+}
+
+Some<Product> some = new Some<>();
+some.setValue(new Product("Tea",1.99));
+Product product = some.getValue();
+
+````
+
 ## Lambdas
 - Lambda expressions are enabled by **functional interfaces**.
 - A **function interface**, it's an interface that has exactly one abstract method.
