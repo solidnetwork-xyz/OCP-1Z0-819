@@ -54,6 +54,7 @@ switch(expression){
 
 **for** statement:
 - for can iterate through and **array** or **collection**
+- ¿null arrays or collection?
 
 ````java
     int i = 0;

@@ -8,7 +8,8 @@ OCP Oracle Certified Professional Java SE 11 Developer practices notes.
 - default values:
   * null
   * 0
-  * false  
+  * false 
+- **length** is property of an array  
 
 ### Initialization
 ````java
