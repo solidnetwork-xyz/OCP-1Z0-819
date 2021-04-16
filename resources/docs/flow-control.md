@@ -53,6 +53,7 @@ switch(expression){
 ### Loops
 
 **for** statement:
+- for can iterate through and **array** or **collection**
 
 ````java
     int i = 0;
@@ -63,6 +64,17 @@ switch(expression){
             System.out.println(i);
             i++;
         }
+````
+````java
+int[] values = {1,2,3};
+int sum = 0;
+for(int i = 0; i< values.length; sum += i++);
+````
+````java
+int[][] matrix = {{1,2,3},{4,5,6}};
+for(int i = 0, j = 2; !(i==2 || j == -1); i++, j--){
+    int value = matrix[i][j];
+}
 ````
 
 
