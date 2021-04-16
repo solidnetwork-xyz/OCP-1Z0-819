@@ -35,6 +35,7 @@ Product product = some.getValue();
 - The remaining methods, if any, they are either default, static, or private.
 
 ````java
+@FunctionalInterface // this is optional
 public interface FuncInterface{
     double abstractMethod(int x);
 }
