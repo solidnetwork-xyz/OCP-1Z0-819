@@ -49,9 +49,12 @@ MORE EXAMPLE
 
 
 ### Arrays Class
+#### Array
 - Arrays.copyOf(...)
 - Arrays.copyOfRange(...)
 - Arrays.fill(...)
 - Arrays.binarySearch(...)
 - Arrays.equals(...)
 - Arrays.sort(...)
+#### List
+- List\<T\> Arrays.AsList(el1,el2,...) //fixed sized List
