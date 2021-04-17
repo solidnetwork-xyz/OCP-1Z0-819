@@ -35,6 +35,17 @@ Product product = some.getValue();
 - The remaining methods, if any, they are either default, static, or private.
 
 ````java
+        Collections.sort(names, new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                return o1.length() - o2.length();
+            }
+        });
+
+        Collections.sort(names, (o1, o2) -> o1.length() - o2.length());
+````
+
+````java
 @FunctionalInterface // this is optional
 public interface FuncInterface{
     double abstractMethod(int x);

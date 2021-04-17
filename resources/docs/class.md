@@ -190,3 +190,94 @@ public String fit(String otherSize){} // Method invocation is resolved based on 
   * public
   * static
   * final
+
+
+### Nested classes
+- class defined inside other class
+- [Static|Member][public|protected|default] - can be accessed externally
+- [Static|Member]private - can be accessed only inside their outer class
+
+#### Static
+- associated with the static context of the outer class
+- can access private variables and methods of the outer class
+- can only access static variables and methods of the outer class
+
+
+````java
+public class Outer{
+    public static class StaticNested{
+        // code of the nested class
+    }
+}
+
+Outer.StaticNested x = new Outer.StaticNested();
+
+````
+
+#### Member
+- associated with the instance context of the outer class
+- To create an instance of a member of a method inner class, you must create an instance of outer class first  
+- can access private variables and methods of the outer class
+- can access both static and instance variables and methods of the outer class
+
+````java
+public class Outer{
+    class MemberNested{
+        // code of the nested class
+    }
+}
+
+````
+
+#### Local
+- associated with the context of specific method
+- instances of the local inner class can only be created within the outer method context
+- outer method local variables and parameters can only be accessed if they are **final or effectively final**: inside method and, static and instance outer class context
+
+````java
+public class Outer{
+    public void myMethod(**final** String variable){
+      class LocalNested{
+        // code of the nested class
+      }
+    }   
+}
+````
+
+#### Anonymous
+- inline implementation or extension of an interface or \[extension\] of a class
+- used to override operations
+- outer method local variables and parameters can only be accessed if they are **final or effectively final**
+
+````java
+MyInterface myInterface = new MyInterface(){
+    @Override
+    public void someMethod(){
+        // some code
+    }
+}
+````
+
+````java
+        ConcreteClass concreteClass1 = new ConcreteClass() {
+            @Override
+            public void iHaveThis() {
+                System.out.println("I have modified this");
+            }
+        };
+````
+
+````java
+        List<String> names = Arrays.asList("Annie", "Carlos", "Jose", "Isidora");
+
+        Collections.sort(names, new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                return o1.length() - o2.length();
+            }
+        });
+
+        for (String name : names) {
+            System.out.println(name);
+        }
+````
