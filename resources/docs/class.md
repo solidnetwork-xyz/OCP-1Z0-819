@@ -133,8 +133,8 @@ public class MyClass implements Comparable<MyClass> {
 - We need to implement **int compare(T o1, T o2)**
 - Returns:
   - **0**: this == other
-  - **1**: this > other
-  - **-1**: this < other
+  - **positive**: this > other
+  - **negative**: this < other
 
 ````java
 import java.util.Arrays;

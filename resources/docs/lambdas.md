@@ -102,10 +102,59 @@ Supplier<Double> lambda = () -> {return Math.PI;};
         
 ````
 
-### Shorthand
+### Method references
+- Reference method is **semantically identical** to the method that lambda expression is implementing.
+- Semantically identical means it has the same return type, and the same parameters type, number and order.
 ````java
-Function<String, String> lambda = x -> x.toUpperCase();
+public class TextFilter{
+    public static boolean removeA(String s){
+        return s.equals("remove A");
+    }
+    public int sortText(String s1, String s2){
+      return s1.compareTo(s2);
+    }
+}
 
-Function<String, String> lambda = String::toUpperCase;
+public class Main(){
+    public static void main(String[] args){
+        TextFilter filter = new TextFilter();
+        List<String> list = new ArrayList<>();
+        ...
+    }
+}
 ````
 
+- \<Class\>::\<staticMethod\> - reference a static method
+````java
+  list.removeIf(s -> TextFilter.removeA(s));
+
+  list.removeIf(TextFilter::removeA);
+````
+- \<object\>::\<instanceMethod\> - reference an instance method of a particular object
+````java
+  Collections.sort(list, (s1,s2) -> filter.sortText(s1,s2));
+
+  Collections.sort(list, filter::sortText);
+````  
+- \<Class\>::\<instanceMethod\> - reference an instance method of an arbitrary object of a particular type
+````java
+   Collections.sort(list, (s1,s2) -> s1.compareToIgnoreCase(s2));
+
+   Collections.sort(list, String::compareToIgnoreCase);
+````  
+- \<Class\>::new - reference a constructor
+````java
+ 
+````
+
+### Comparator interface
+````java
+Comparator<Product> sortNames = (p1,p2) -> p1.getName().compareTo(p2.getName());
+Collections.sort(menu, Comparator.nullsFirst(sortNames));
+````
+
+### Predicate interface
+````java
+Predicate<Product> foodFilter = (p) -> p instanceof Food;
+menu.removeIf(foodFilter.negate());
+````
