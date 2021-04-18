@@ -66,6 +66,14 @@ public class TestClass {
 | Supplier\<T\> | T get(); | Supplier\<String\> lambda = () -> "Canada"; |
 | Runnable | void run(); | Runnable lambda = () -> System.out.println("Run"); |
 
+### Bi-argument functional interfaces
+| Lambda Type     | Abstract Method | Example |
+| ----------- | ----------- |-------|
+| BiFunction\<T,U,R\> | R apply(T t,U u); | BiFunction\<Integer, Integer, Double\> lambda = (x,y) -> 2.0\*x\*y; |
+| BinaryOperator\<T\> | T apply(T t1, T t2); | BinaryOperator\<Integer\> lambda = (x,y) -> 2\*x\*y; |
+| BiPredicate\<T,U\> | boolean test(T t, U u); | BiPredicate\<Integer, Integer\> lambda = (x,y) -> x>y; |
+| BiConsumer\<T,U\> | void accept(T t, U u); | BiConsumer\<Integer, Integer\> lambda = (x,y) -> System.out.println(x+y); |
+
 ### Parentheses
 - Parentheses are only optional with a single implicit parameter.
 
@@ -154,6 +162,11 @@ Collections.sort(menu, Comparator.nullsFirst(sortNames));
 ````
 
 ### Predicate interface
+- and
+- or
+- negate
+- not
+- isEqual
 ````java
 Predicate<Product> foodFilter = (p) -> p instanceof Food;
 menu.removeIf(foodFilter.negate());

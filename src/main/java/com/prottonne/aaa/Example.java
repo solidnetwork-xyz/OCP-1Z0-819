@@ -15,5 +15,9 @@ package com.prottonne.aaa;
 
 public class Example {
 
+    public static void main(String[] args) {
+
+
+    }
 
 }
