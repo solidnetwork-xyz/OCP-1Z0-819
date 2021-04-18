@@ -32,15 +32,23 @@ OCP Oracle Certified Professional Java SE 11 Developer practices notes.
 
 ## [Exceptions](resources/docs/exceptions.md)
 
-### Flow
-After an exception is handled, the execution continues after the last catch handler.
+## Logging API
+- module: requires java.logging
+- import java.util.logging.*
+- Levels from bottom to top:
+    - Severe
+    - Warning
+    - Info
+    - Config
+    - Fine
+    - Finer
+    - Finest
+
+## Assertions
+
 ````java
-try{
-    
-    }catch(Exception e){
-    System.out.println("exception is handled here");
-}
-System.out.println("execution continues here");
+assert <boolean expression>;
+assert <boolean expression> : <error text expression> ;
 ````
 
 ## [Lambdas](resources/docs/lambdas.md)
