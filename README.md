@@ -30,11 +30,7 @@ OCP Oracle Certified Professional Java SE 11 Developer practices notes.
 - **Objects** are stored in the **Heap**.
 - **Object references** are pointers and variables, they are stored in the **Stack**.
 
-## Exceptions
-### Hierarchy
-- Throwable **(checked)**
-    - Exception **(checked)** / Error **(unchecked)**
-        - RuntimeException **(unchecked)**
+## [Exceptions](resources/docs/exceptions.md)
 
 ### Flow
 After an exception is handled, the execution continues after the last catch handler.
