@@ -57,4 +57,6 @@ assert <boolean expression> : <error text expression> ;
 
 ## [IO](resources/docs/io.md)
 
+## [Threads](resources/docs/threads.md)
+
 ## [Modularity](resources/docs/modules.md)
