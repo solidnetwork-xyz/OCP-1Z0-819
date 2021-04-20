@@ -128,7 +128,8 @@ public class Main{
 - copy, // no copy folder subfolder
 - move
 - delete // you cannot delete a non-empty directory, delete content first
-
+- notExists
+- createDirectory // IOException if the parent directory does not exist
 
 ### FileSystem
 - describes available filesystems
