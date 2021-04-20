@@ -55,4 +55,6 @@ assert <boolean expression> : <error text expression> ;
 
 ## [Streams](resources/docs/streams.md)
 
+## [IO](resources/docs/io.md)
+
 ## [Modularity](resources/docs/modules.md)

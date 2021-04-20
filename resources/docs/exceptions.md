@@ -56,7 +56,7 @@ try{
 }
 System.out.println("This point is never reached");
 ````
-### try-with-resources
+### try-with-parameters
 
 ````java
 try(/*initialise autocloseable resources*/){
