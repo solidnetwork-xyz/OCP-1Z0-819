@@ -66,3 +66,30 @@ assert <boolean expression> : <error text expression> ;
 - **@Override** verify that a method actually overrides a parent operation
 - **@Deprecation**
 - **@SuppressWarnings** unchecked or deprecation
+
+## JDBC
+````java
+public class Example {
+  public static void main(String[] args) {
+    String url = "jdbc:derby:localhost:1527:productDB";
+    String username = "pm";
+    String pwd = "not-a-password";
+    BigDecimal price = BigDecimal.valueOf(10.3);
+    String productQuery = "select id, name from products where price > ?";
+    try (Connection c = DriverManager.getConnection(url, username, pwd);
+         PreparedStatement s = c.prepareStatement(productQuery);
+         s.setBigDecimal(1, price);
+         ResultSet rs = s.executeQuery();         
+    ) {
+
+      while (rs.next()){
+          int id = rs.getInt(1);
+      }
+
+    } catch (SQLException e) {
+      String state = e.getSQLState();
+      int code = e.getErrorCode();
+    }
+  }
+}
+````
