@@ -175,6 +175,12 @@ public static void main(String[] args){}
 ```
 Non-static field 'declared out of main' cannot be referenced from a static context.
 
+### Object class
+- public native int hashCode()
+- public boolean equals(Object obj)
+- protected native Object clone()
+- public String toString()
+
 ### Methods
 - The signature of a method is: a name +  parameter types.
 - No two method with the same signature can exist in a class, even if they have different return types.

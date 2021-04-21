@@ -60,3 +60,9 @@ assert <boolean expression> : <error text expression> ;
 ## [Threads](resources/docs/threads.md)
 
 ## [Modularity](resources/docs/modules.md)
+
+## Annotations
+- **@FunctionalInterface** enforce the definition of a functional interface: only one abstract method
+- **@Override** verify that a method actually overrides a parent operation
+- **@Deprecation**
+- **@SuppressWarnings** unchecked or deprecation

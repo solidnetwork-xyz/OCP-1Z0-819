@@ -58,3 +58,30 @@ MORE EXAMPLE
 - Arrays.sort(...)
 #### List
 - List\<T\> Arrays.AsList(el1,el2,...) //fixed sized List
+
+### Var-arg
+- triple dot ... as parameter is an array of ...
+- it could be zero or more
+
+````java
+public static void myMethod(String... args) {
+        int size = args.length;
+        System.out.println("size: " + size);
+        if (size > 0) {
+        String argZero = args[0];
+          System.out.println("argZero: " + argZero);
+          for (String e : args) {
+            System.out.println(e);
+          }
+        }
+}
+
+public static void main(String[] args) {
+        myMethod();
+        myMethod("1", "2");
+        myMethod(args);
+}
+
+````
+
+
