@@ -36,6 +36,7 @@ $java --list-module
 - A module is declared in a **module-info.java** file.
 - It's placed in the root directory package.
 - Unique module name reverse-dns convention
+- classes of a given package must be all be within the same module
 
 ````java
 module <module-name> {
@@ -65,6 +66,7 @@ module com.some {
 
 ### exports
 - **exports** is like **public** (public and protected types not default)
+- all public classes are hidden access unless the containing package is explicitly exported    
 - **exports** \<packages\> **to** \<other modules\> restricts visibility to those modules
 - you can use comma-separated lists of module names
 
@@ -86,3 +88,6 @@ module com.some {
     exports com.some.app to com.other;
 }
 ````
+
+### services
+- services consumer y provider reference a service module with **require**
