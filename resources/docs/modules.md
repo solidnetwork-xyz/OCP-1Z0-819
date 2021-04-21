@@ -32,12 +32,57 @@ $java --list-module
 
 
 ### Declaration
-
+- modules is a group of packages
 - A module is declared in a **module-info.java** file.
-- It's placed in the root directory.
+- It's placed in the root directory package.
+- Unique module name reverse-dns convention
+
 ````java
-module modulename {
-    requires [transitive] ...;
-    exports ... [to] ...;
+module <module-name> {
+    requires <other module names>   [transitive] [static]...;
+    exports <packages of this modules to other modules that require them> ... [to] ...;
+    opens <packages of this modules to other modules via reflection>;
+    users <services provided by other modules>;
+    provides <services to other modules> with <service implementations>;
+    version <value>;
+}
+````
+
+### requires
+- **java.base** is implied for all modules
+- you can use comma-separated lists of module names
+- **requires** is like **import**
+- **requires transitive** is **import** and make it **imported** for all that **requires** me
+- **requires static** is available at compile time only
+
+````java
+module com.some {
+    requires java.logging;
+    riquires transitive org.acme;
+    requires static com.foo;
+}
+````
+
+### exports
+- **exports** is like **public** (public and protected types not default)
+- **exports** \<packages\> **to** \<other modules\> restricts visibility to those modules
+- you can use comma-separated lists of module names
+
+````java
+module com.some {
+    exports com.some.data;
+    exports com.some.app to com.other;
+}
+````
+
+### opens
+- works similar to **export**
+- also makes all its non-public types available via reflection
+- modules that contain injectable code should use **opens**
+
+````java
+module com.some {
+    exports com.some.data;
+    exports com.some.app to com.other;
 }
 ````
