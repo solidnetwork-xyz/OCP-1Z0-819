@@ -109,3 +109,15 @@ double someDouble = 4.0f;
 
 ### BigDecimal, BigInteger
 * They are immutable
+
+# Type hierarchy
+- arrays are **covariant**
+````java
+Product[] products = new Food[10];
+````
+
+- collections are **invariant**
+````java
+List<Product> products = new ArrayList<Food>(); // Compiler error
+````
+
