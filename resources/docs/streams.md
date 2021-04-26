@@ -53,19 +53,26 @@ products
 - Stream processing ending as soon as the result is determined; remaining stream data can be ignored
 
 ### Intermediate operations
-All intermediate operations return stream
+All intermediate operations return **Stream**
 
 - filter
 - peek
 - map
 - flatmap
 
+### Terminal operations return Optional
+- findFirst 
+- findAny
+- max
+- min
+
+#### Optional
+- T get() **return T**
+- T orElse(T t) **return T**
+- boolean isPresent() **return boolean**
+
 ### Terminal operations
 - forEach
-- findFirst, findAny, max, min **return Optional**
-- Optional.get() **return the data**
-- Optional.orElse(T t) **return T**
-- Optional.isPresent() **return boolean**  
 - anyMatch, allMatch, noneMatch **return boolean**
 - count **return long**
 
