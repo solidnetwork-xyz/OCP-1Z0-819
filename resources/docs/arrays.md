@@ -50,6 +50,22 @@ for(int i = 0, j = 2; !(i==2 || j == -1); i++, j--){
 }
 ````
 
+````java
+       String[][] matrix = {{"A","B","C"},{"D","E","F"}};
+
+        for(int row = 0; row< 2; row++){
+            for (int col = 0;col< 3;col++){
+                System.out.println(matrix[row][col]);
+            }
+        }
+
+        for(String[] row : matrix){
+            for(String col : row){
+                System.out.println(col);
+            }
+        }
+````
+
 
 
 ### Arrays Class
