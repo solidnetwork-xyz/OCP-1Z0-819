@@ -42,8 +42,12 @@ Toy[] myToys = new Toy[3]; // an Array of 3 abstract Toys
                   // 1st row, 2nd row
 int[][] matrix = {{4,1},{2,0,5}}
 
-MORE EXAMPLE
-
+````
+````java
+int[][] matrix = {{1,2,3},{4,5,6}};
+for(int i = 0, j = 2; !(i==2 || j == -1); i++, j--){
+    int value = matrix[i][j];
+}
 ````
 
 
