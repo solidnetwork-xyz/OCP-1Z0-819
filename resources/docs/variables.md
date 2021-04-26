@@ -72,7 +72,8 @@ var itemQueue = new PriorityQueue<>(); // inferred as PriorityQueue<Object>
 **numbers** usually are going to be inferred as **int** or **double**.
 
 ### Constants
-final in variables = class instances, local, parameters
+* final in variables
+* final in parameters
 
 ### Static
 
