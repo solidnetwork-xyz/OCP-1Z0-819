@@ -13,7 +13,7 @@ OCP Oracle Certified Professional Java SE 11 Developer practices notes.
 
 ### Initialization
 ````java
-// String[] aString 
+// String []aString 
 // String aString[]
 String[] aString = {"St1","St2","St3"};
 
