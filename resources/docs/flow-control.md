@@ -54,7 +54,7 @@ switch(expression){
 
 **for** statement:
 - for can iterate through and **array** or **collection**
-- ¿null arrays or collection?
+- pass a null array or Collection to a foreach statement results in a **NullPointerException**
 
 ````java
     int i = 0;
