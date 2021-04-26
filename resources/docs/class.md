@@ -106,8 +106,8 @@ public interface IService extends ISuperService {
 - We need to implement **int compareTo(T other)**
 - Returns:
     - **0**: this == other
-    - **1**: this > other
-    - **-1**: this < other
+    - **positive**: this > other
+    - **negative**: this < other
 
 ````java
 public interface Comparable<T>{
