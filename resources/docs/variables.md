@@ -43,28 +43,26 @@ if(price > 20){
     
 ````
 Where can var **not** be used?
-````java
-var price; // declarations without an initial value
 
-var price = null; // initialization with a null value
+* declarations without an initial value // var price;
 
-var price = 9.95, tax = 0.05; // compound declarations
+* initialization with a null value // var price = null;
 
-var prices = {9.95, 5, 3.50}; // Array initializers
+* compound declarations // var price = 9.95, tax = 0.05;
 
-public var price; // fields of a class
+* Array initializers // var prices = {9.95, 5, 3.50};
 
-public void setPrice(var price){} // parameters of a method
+* fields of a class // public var price;
 
-public var getPrice(){} // method return types
+* parameters of a method // public void setPrice(var price){}
 
-(var x, y) -> x.process(y); // You could never mix implicitly and explicitly typed lambda parameters
+* method return types // public var getPrice(){}
 
-(var x, int y) -> x.process(y);
+* You could never mix implicitly and explicitly typed lambda parameters // (var x, y) -> x.process(y); (var x, int y) -> x.process(y);
         
-var x -> x.toString(); // You cannot omit parenthesis for single explicitly typed lambda parameter
+* You cannot omit parenthesis for single explicitly typed lambda parameter // var x -> x.toString();
 
-````
+
 be careful with **interfaces**.
 ````java
 var list = new ArrayList<String>(); // inferred as ArrayList<String>
