@@ -216,8 +216,8 @@ public enum Planet {
 
 ### Nested classes
 - class defined inside other class
-- [Static|Member][public|protected|default] - can be accessed externally
-- [Static|Member]private - can be accessed only inside their outer class
+- \[Nested-Static-Class|Nested-Member-Class\]\[public|protected|default\] - can be accessed externally
+- \[Nested-Static-Class|Nested-Member-Class\]private - can be accessed only inside their outer class
 
 #### Static
 - associated with the static context of the outer class
