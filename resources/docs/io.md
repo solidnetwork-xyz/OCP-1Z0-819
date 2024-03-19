@@ -4,8 +4,8 @@ OCP Oracle Certified Professional Java SE 11 Developer practices notes.
 [README.md](../../README.md#io)
 
 ## IO API
-- Input and Output streams both implements **Autocloseable** interface.
-- Reader and Writer streams both implements **Autocloseable** interface.
+- Input and Output streams both implements **AutoCloseable** interface.
+- Reader and Writer streams both implements **AutoCloseable** interface.
 - can be used in try-with-parameters construct
 <table>
 <thead>

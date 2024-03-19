@@ -59,7 +59,7 @@ module <module-name> {
 ````java
 module com.some {
     requires java.logging;
-    riquires transitive org.acme;
+    requires transitive org.acme;
     requires static com.foo;
 }
 ````

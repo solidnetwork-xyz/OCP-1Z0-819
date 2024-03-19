@@ -31,7 +31,7 @@ for(Product p : products){
 
 // Stream
 products
-        .strams()
+        .streams()
         .parallel()
         .filter(p->p.getPrice()>10)
         .forEach(p->p.setDiscount(0.2));          

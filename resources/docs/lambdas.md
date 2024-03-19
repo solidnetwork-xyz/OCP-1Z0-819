@@ -102,7 +102,7 @@ Item x -> x.toString(); // You cannot omit parenthesis for single explicitly typ
 
 ````java
 Consumer<String> lambda = x -> {
-    x = x + "Prottonne";
+    x = x + "SolidNetwork";
     System.out.println(x);
 };
 

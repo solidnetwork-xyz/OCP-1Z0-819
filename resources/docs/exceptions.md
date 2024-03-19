@@ -59,10 +59,10 @@ System.out.println("This point is never reached");
 ### try-with-parameters
 
 ````java
-try(/*initialise autocloseable resources*/){
+try(/*initialize AutoCloseable resources*/){
     /* use resources */ 
 }catch(){
     
 }
-/* implicitly formed finally block invokes close method on every autocloseable resource */
+/* implicitly formed finally block invokes close method on every AutoCloseable resource */
 ````

@@ -99,7 +99,7 @@ public interface IService extends ISuperService {
 - a subtype interface's **default method** takes priority over a super-type interface's **default method** of that subtype.
 - two equal subtypes interface's **default method** are going to be treated as abstract.
 - A class must override default interface method only if conflicts with another default method.
-- if a class **implements** method a() from an interface, and at the same time **extends** method a() from a concrete class, the last one (contrete) resolve the interface abstraction
+- if a class **implements** method a() from an interface, and at the same time **extends** method a() from a concrete class, the last one (concrete) resolve the interface abstraction
 - public **default** method in an interface is **public** in the implementation class
 
 ### Comparable interface
@@ -207,7 +207,7 @@ public enum Planet {
     private Planet(){
         distanceFromSunAU = 5.0;
     }
-    public double getDistace(){
+    public double getDistance(){
         return distanceFromSunAU;
     }
 }
