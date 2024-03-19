@@ -1,0 +1,20 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/java:0-17",
+  "onCreateCommand": "git config --global user.name ${GITHUB_USER}",
+  "features": {
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "none",
+      "installMaven": "true",
+      "mavenVersion": "3.8.6",
+      "installGradle": "false"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {},
+      "extensions": [
+        "streetsidesoftware.code-spell-checker"
+      ]
+    }
+  }
+}
