@@ -45,7 +45,7 @@ try{
 }
 System.out.println("execution continues here");
 ````
-- **finally** block will be excuted either the exception handled or not, only System.exit(0) will make the **finally** block not ewecuted
+- **finally** block will be excuted either the exception handled or not, only System.exit(0) will make the **finally** block not executed
 ````java
 try{
     throw new NullPointerException();
